@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Affectations.Controllers.RetrieveFormController">
+   <children>
+      <Button fx:id="searchButton" layoutX="476.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleSearchAffectation" prefHeight="25.0" prefWidth="88.0" text="Chercher" />
+      <TextField fx:id="searchTextField" layoutX="33.0" layoutY="31.0" prefHeight="25.0" prefWidth="435.0" promptText="Chercher une affectation" />
+      <TableView fx:id="retrieveTableView" editable="true" layoutX="33.0" layoutY="83.0" prefHeight="213.0" prefWidth="531.0">
+        <columns>
+          <TableColumn fx:id="affectationRemarqueColumn" prefWidth="374.0" text="Remarque" />
+          <TableColumn fx:id="affectationDateColumn" prefWidth="156.0" text="Date" />
+        </columns>
+      </TableView>
+   </children> 
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Demandes.Controllers.CreationFormController">
+    <children>
+      <Button fx:id="searchButton" layoutX="476.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleSearchDemande" prefHeight="25.0" prefWidth="88.0" text="Chercher" />
+      <TextField fx:id="searchTextField" layoutX="33.0" layoutY="31.0" prefHeight="25.0" prefWidth="435.0" promptText="Chercher une demande" />
+      <TableView fx:id="retrieveTableView" editable="true" layoutX="33.0" layoutY="83.0" prefHeight="213.0" prefWidth="531.0">
+        <columns>
+          <TableColumn fx:id="demandeRemarqueColumn" prefWidth="155.0" text="Remarque" />
+          <TableColumn fx:id="demandeEtatColumn" prefWidth="102.0" text="Etat" />
+          <TableColumn fx:id="demandeCasColumn" prefWidth="116.0" text="Cas" />
+          <TableColumn fx:id="demandeDateColumn" prefWidth="157.0" text="Date" />
+        </columns>
+      </TableView>
+      <TextField fx:id="remarqueTextField" layoutX="34.0" layoutY="310.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="etatTextField" layoutX="238.0" layoutY="310.0" prefHeight="25.0" prefWidth="97.0" />
+      <TextField fx:id="casTextField" layoutX="341.0" layoutY="310.0" prefHeight="25.0" prefWidth="103.0" />
+      <TextField fx:id="dateTextField" layoutX="451.0" layoutY="310.0" prefHeight="25.0" prefWidth="113.0" promptText="aaaa-mm-jj" />
+      <Button fx:id="addButton" layoutX="33.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleCreateDemande" prefHeight="25.0" prefWidth="531.0" text="Ajouter Demande" />
+   </children> 
+</AnchorPane>
