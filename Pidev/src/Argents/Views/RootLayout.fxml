@@ -6,6 +6,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootBorderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Affectations.Controllers.RootLayoutController">
-    
+<BorderPane fx:id="rootBorderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Argents.Controllers.RootLayoutController">
+    <top>
+      <MenuBar fx:id="MenuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Donnation Argent">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Aide" onAction="#handleHelp" />
+              <MenuItem mnemonicParsing="false" text="Quitter" onAction="#handleExit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

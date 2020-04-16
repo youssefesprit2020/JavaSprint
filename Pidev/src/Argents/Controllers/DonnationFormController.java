@@ -5,6 +5,7 @@
  */
 package Argents.Controllers;
 
+import Argents.Entitys.Argent;
 import Argents.Utilitys.DAO;
 import Argents.Utilitys.DbCnx;
 import java.net.URL;
@@ -19,6 +20,9 @@ import com.stripe.model.PaymentIntent;
 import com.stripe.model.Token;
 import com.stripe.param.PaymentIntentCreateParams;
 import static java.lang.Integer.parseInt;
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -67,7 +71,17 @@ public class DonnationFormController implements Initializable {
                     );
 
                 Charge charge = Charge.create(donParams);
+                
+                //recupere la date actuel
+                DateTimeFormatter dtFormater = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+                LocalDateTime dateActuel = LocalDateTime.now(); 
+                
+                //persister les donnees dans un objet de type Argent
+                Argent argentDon = new Argent(parseInt(donateTextField.getText())/100, Date.valueOf(dtFormater.format(dateActuel)));
             
+                //garder une trace sur la bdd
+                dao.insertArgent(argentDon);
+                
                 //un msg confirmation
                 Alert alert = new Alert (Alert.AlertType.INFORMATION);
                 alert.setContentText("Merci pour votre don");
